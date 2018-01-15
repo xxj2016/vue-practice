@@ -19,15 +19,15 @@ export default {
     return {
       // title: "这是我的第一个脚手架！"
       users: [
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false },
-        { name: "Jet", position: "Web开发", show: false }
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false },
+      //   { name: "Jet", position: "Web开发", show: false }
       ],
       title: "传入的时一个只[string，number,boolean]"
     };
@@ -41,6 +41,13 @@ export default {
     users: Users,
     "app-header": Header,
     "app-footer": Footer
+  },
+  created() {
+    this.$http.get('http://jsonplaceholder.typicode.com/users')
+      .then(data => {
+        console.log(data.body);
+        this.users = data.body
+      })
   }
 };
 </script>

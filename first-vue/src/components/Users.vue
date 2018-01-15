@@ -2,16 +2,18 @@
   <div class="users">
     <h1>你好啊, Users</h1>
     <ul>
-        <li v-for="user in users" 
-            v-on:click="user.show = !user.show">
-            <h1>{{user.name}}</h1>
-            <h2 v-if="user.show">{{user.position}}</h2>
+        <li v-for="user in users">
+            <h2>{{user.name}}</h2>
+            <h3>{{user.username}}</h3>
         </li>
     </ul>
     <button v-on:click="deleteUser">删除</button>
   </div>
 </template>
-
+<!--
+    传值： string number boolean
+    引用： array object
+-->
 <script>
 export default {
   name: 'users',

@@ -1,17 +1,15 @@
 <template>
   <div id="translateOutput">
-      结果是：{{result}}
+      <h3>{{translatedResult}}</h3>
   </div>
 </template>
 
 <script>
 export default {
   name: "translateOutput",
-  props: {
-      result: {
-          type: String
-      }
-  },
+  props:[
+      "translatedResult"
+  ],
   data: function() {
       return {
 
